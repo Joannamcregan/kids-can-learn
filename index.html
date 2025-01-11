@@ -8,16 +8,16 @@
     <link href="./src/output.css" rel="stylesheet">
     <link rel="images" href="img">
 </head>
-<body class="bg-black">
-    <main class="h-screen">
-        <div id="space-row-top" class="h-1/2 bg-gradient-to-b from-teal-400 to-blue-300 opacity-25">
-            <div class="h-full w-64">
-                <div class="bg-star-teal-400 w-3 h-3"></div>
-            </div>
-        </div>
-        <div id="space-row-bottom" class="h-1/2 bg-gradient-to-b from-blue-300 to-purple-400 opacity-25"></div>
-    </main>
+<body class="bg-black h-screen">
+    <main class="h-screen bg-gradient-to-b from-sky-950 to-indigo-950 opacity-100">
+        <div class="flex flex-wrap">
 
+        </div>
+        <div class="absolute bottom-0 w-screen h-fit bg-zinc-300 border-4 border-zinc-400 p-2">
+            <p class="w-fit px-2 py-1 mb-2 mx-auto bg-zinc-100" id="message">Your mission is to clear space junk so your spaceship can travel and learn about space.</p>
+            <button class="block rounded-2xl shadow-md shadow-zinc-700 my-2 mx-auto bg-emerald-700 border-2 border-emerald-600 text-white px-3 py-1" id="button">Got it.</button>
+        </div>
+    </main>
 <script src="./src/main.js"></script>
 </body>
 </html>
