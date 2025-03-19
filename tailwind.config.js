@@ -6,9 +6,12 @@ module.exports = {
   './index.html'],
   theme: {
     extend: {
-      'backgroundImage':{
-          'star-teal-400': 'radial-gradient(#eee, rgba(240, 253, 250, 0.8), rgba(45, 212, 191, 0.2), rgba(252, 255, 255, 0))',
-        },
+      'width':{
+          '200': '200%',
+      },
+      'height':{
+        '200': '200%',
+      }
     },
   },
   plugins: [],
