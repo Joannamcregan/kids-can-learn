@@ -1,0 +1,15 @@
+body{
+    background: rgb(23, 23, 23);
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.crescent-nebula{
+    background-image: url("./img/crescent_nebula.webp");
+    background-color: rgb(0, 36, 36);
+    height: 200%;
+    width: 200%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

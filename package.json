@@ -1,0 +1,11 @@
+{
+  "name": "kids-can-learn",
+  "version": "1.0.0",
+  "description": "A fun game where kids can practice math skills while cleaning up outerspace",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "joanna",
+  "license": "ISC"
+}
