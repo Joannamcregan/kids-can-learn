@@ -12,10 +12,19 @@ const abelPics = [
     {path: './img/space_abel_2.jpg', alt: 'a young boy with light brown skin and curly hair holds the microphone on his headset and gazes forward thoughtfully.'},
     {path: './img/space_abel_3.jpg', alt: 'a young boy with light brown skin and curly hair gazes forward, wearing a red shirt, a microphone headset, and a slight smile.'}
 ]
+//All the text messages from the commander are in this array.
+const commanderTexts = [
+    'Your mission is to pick up space junk.'
+]
 //All the facts about space are in this array.
 const spaceFacts = [
     'Fact one', 'fact two', 'fact three'
 ]
+//This assigns the "message" webpage element to a variable, which is like giving it a nickname we can use in the JavaScript code.
+const message = document.getElementById('message');
+//This assigns the number 0 to a variable. Later we're going to use this variable to count.
+let counter = 0;
+
 //This function tells the webpage what to do when it first loads
 window.onload = ()=> {
     //This part of the function gets a random whole number between 0 and 3 and assigns it to a variable called randomNumber.
@@ -23,4 +32,12 @@ window.onload = ()=> {
     //Then we take the random number and look to see which picture is in that index in the array. An index is like a place in line.
     //We use the picture at the random number's index to give the "space" section of the webpage a background.
     document.getElementById('space').classList.add(spaceViews[randomNumber]['imageName']);
+    //This part gets the first message ready. 
+    //It adds the first Abel picture in the abelPics array to the "message" section of the webpage.
+    const pic = document.createElement('IMG');
+    pic.src = abelPics[counter]['path'];
+    pic.alt = abelPics[counter]['alt'];
+    message.append(pic);
+    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage.
+    
 };
