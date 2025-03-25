@@ -14,7 +14,7 @@ const abelPics = [
 ]
 //All the text messages from the commander are in this array.
 const commanderTexts = [
-    'Your job is to pick up space junk. When you see some space junk, pick the right magnet to grab it.',
+    'Your job is to pick up space junk. When you see some space junk, tap the right magnet to grab it.',
     'Space junk can break spaceships. It is important to keep Earth and space clean.',
     "You're doing great! Did you know that grown-ups who study space also do math?",
     "You did it! You grabbed all the space junk! Now you can take it to the recycling station. Then you can learn about space!"
@@ -26,7 +26,7 @@ const spaceFacts = [
 //This assigns the "message" webpage element to a variable, which is like giving it a nickname we can use in the JavaScript code.
 const message = document.getElementById('message');
 //This assigns the number 0 to a variable. Later we're going to use this variable to count.
-let counter = 0;
+let messageCounter = 0;
 
 //This function tells the webpage what to do when it first loads
 window.onload = ()=> {
@@ -38,19 +38,23 @@ window.onload = ()=> {
     //This part gets the first message ready. 
     //It adds the first Abel picture in the abelPics array to the "message" section of the webpage.
     const pic = document.createElement('IMG');
-    pic.src = abelPics[counter]['path'];
-    pic.alt = abelPics[counter]['alt'];
+    pic.src = abelPics[messageCounter]['path'];
+    pic.alt = abelPics[messageCounter]['alt'];
     message.append(pic);
-    //Now it makes the message appear after 1 second
+    //Now it makes the message appear after 2 seconds
     setTimeout(()=>{
         message.classList.add('opacity-10');
         message.classList.remove('hidden');
-    }, 1000);
-    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage after 3 seconds.
+    }, 2000);
+    setTimeout(()=>{
+        message.classList.add('fade-in');
+        message.classList.remove('opacity-10');
+    }, 2000);
+    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage after 5 seconds.
     setTimeout(()=>{
         const paragraph = document.createElement('p');
-        const text = document.createTextNode(commanderTexts[counter]);
+        const text = document.createTextNode(commanderTexts[messageCounter]);
         paragraph.append(text);
         message.append(paragraph);
-    }, 3000);
+    }, 5000);
 };
