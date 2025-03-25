@@ -14,7 +14,10 @@ const abelPics = [
 ]
 //All the text messages from the commander are in this array.
 const commanderTexts = [
-    'Your mission is to pick up space junk.'
+    'Your job is to pick up space junk. When you see some space junk, pick the right magnet to grab it.',
+    'Space junk can break spaceships. It is important to keep Earth and space clean.',
+    "You're doing great! Did you know that grown-ups who study space also do math?",
+    "You did it! You grabbed all the space junk! Now you can take it to the recycling station. Then you can learn about space!"
 ]
 //All the facts about space are in this array.
 const spaceFacts = [
@@ -38,6 +41,16 @@ window.onload = ()=> {
     pic.src = abelPics[counter]['path'];
     pic.alt = abelPics[counter]['alt'];
     message.append(pic);
-    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage.
-    
+    //Now it makes the message appear after 1 second
+    setTimeout(()=>{
+        message.classList.add('opacity-10');
+        message.classList.remove('hidden');
+    }, 1000);
+    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage after 3 seconds.
+    setTimeout(()=>{
+        const paragraph = document.createElement('p');
+        const text = document.createTextNode(commanderTexts[counter]);
+        paragraph.append(text);
+        message.append(paragraph);
+    }, 3000);
 };
