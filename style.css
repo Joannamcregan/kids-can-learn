@@ -17,10 +17,6 @@ main{
 #space{
     position: absolute;
 }
-.starting-point{
-    top: -10px;
-    left: -10px;
-}
 .crescent-nebula{
     background-image: url("./img/crescent_nebula.webp");
     background-color: rgb(0, 36, 36);
@@ -110,13 +106,30 @@ main{
     display: block;
 }
 .fade-in{
-    animation: fadeIn 10s forwards;
+    animation: fadeIn 2s forwards;
 }
 @keyframes fadeIn {
     0% {
         opacity: 0.1;
     }
-    10% {
+    100% {
         opacity: 1;
+    }
+}
+.point-0{
+    top: -10px;
+    left: -10px;
+}
+.point-1{
+    animation: point1 3s forwards;
+}
+@keyframes point1 {
+    0% {
+        top: -10px;
+        left: -10px;
+    }
+    100% {
+        top: 0px;
+        left: -300px;
     }
 }

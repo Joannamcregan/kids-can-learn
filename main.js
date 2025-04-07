@@ -25,16 +25,19 @@ const spaceFacts = [
 ]
 //This assigns the "message" webpage element to a variable, which is like giving it a nickname we can use in the JavaScript code.
 const message = document.getElementById('message');
+//This assigns the "space" webpage element to a variable.
+const space = document.getElementById('space');
 //This assigns the number 0 to a variable. Later we're going to use this variable to count.
 let messageCounter = 0;
-
+//This assigns the number 0 to a variable. Later we are going to use this variable to count.
+let directionCounter = 0;
 //This function tells the webpage what to do when it first loads
 window.onload = ()=> {
     //This part of the function gets a random whole number between 0 and 3 and assigns it to a variable called randomNumber.
     const randomNumber = Math.floor(Math.random() * spaceViews.length);
     //Then we take the random number and look to see which picture is in that index in the array. An index is like a place in line.
     //We use the picture at the random number's index to give the "space" section of the webpage a background.
-    document.getElementById('space').classList.add(spaceViews[randomNumber]['imageName']);
+    space.classList.add(spaceViews[randomNumber]['imageName']);
     //This part gets the first message ready. 
     //It adds the first Abel picture in the abelPics array to the "message" section of the webpage.
     const pic = document.createElement('IMG');
@@ -56,14 +59,26 @@ window.onload = ()=> {
         const text = document.createTextNode(commanderTexts[messageCounter]);
         paragraph.append(text);
         message.append(paragraph);
+        //It adds 1 to the messageCounter number to help us keep track of which messages we have displayed so far
+        messageCounter++;
     }, 2500);
-    //It adds 1 to the messageCounter number to help us keep track of which messages we have displayed so far
-    messageCounter++;
     //It adds a button after 4 seconds.
     setTimeout(()=>{
         const button = document.createElement('button');
         const buttonText = document.createTextNode('okay');
         button.append(buttonText);
+        button.addEventListener('click', blastOff);
         message.append(button);
     }, 4000);
 };
+
+function blastOff(){
+    message.innerHTML = '';
+    message.classList.remove('opacity-10');
+    message.classList.add('hidden');
+    setTimeout(()=>{
+        space.classList.remove('point-' + directionCounter);
+        directionCounter++;
+        space.classList.add('point-' + directionCounter);
+    }, 1000);
+}
