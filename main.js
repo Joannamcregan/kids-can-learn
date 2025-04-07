@@ -50,11 +50,20 @@ window.onload = ()=> {
         message.classList.add('fade-in');
         message.classList.remove('opacity-10');
     }, 2000);
-    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage after 5 seconds.
+    //Now it adds the first text in the commanderTexts array to the "message" section of the webpage after 2 and a half seconds.
     setTimeout(()=>{
         const paragraph = document.createElement('p');
         const text = document.createTextNode(commanderTexts[messageCounter]);
         paragraph.append(text);
         message.append(paragraph);
-    }, 5000);
+    }, 2500);
+    //It adds 1 to the messageCounter number to help us keep track of which messages we have displayed so far
+    messageCounter++;
+    //It adds a button after 4 seconds.
+    setTimeout(()=>{
+        const button = document.createElement('button');
+        const buttonText = document.createTextNode('okay');
+        button.append(buttonText);
+        message.append(button);
+    }, 4000);
 };
