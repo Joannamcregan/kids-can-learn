@@ -60,7 +60,7 @@ main{
     opacity: 0.1;
 }
 #controls{
-    height: 50px;
+    height: 70px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -97,14 +97,103 @@ main{
 }
 #message button{
     border-radius: 50%;
-    width: 75px;
+    width: 80px;
     padding: 20px;
     background-image: linear-gradient(to bottom right, rgb(104, 124, 252) 30%, rgb(139, 154, 249) 50%, rgb(104, 124, 252) 70%);
     color: black;
+    font-size: 16px;
     text-shadow: 0px 0px 2px rgb(132, 148, 253);
     margin: 20px auto;
     display: block;
 }
+/* space junk styles------------------------------------------------------------------------------------------ */
+#junk{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    scale: 1.5;
+    color: white;
+}
+.junk-tl-0{
+    border-top-left-radius: 0px;
+}
+.junk-tl-1{
+    border-top-left-radius: 20px;
+}
+.junk-tl-2{
+    border-top-left-radius: 40px;
+}
+.junk-tl-3{
+    border-top-left-radius: 60px;
+}
+.junk-tl-4{
+    border-top-left-radius: 80px;
+}
+.junk-tl-5{
+    border-top-left-radius: 100px;
+}
+.junk-tr-0{
+    border-top-right-radius: 0px;
+}
+.junk-tr-1{
+    border-top-right-radius: 20px;
+}
+.junk-tr-2{
+    border-top-right-radius: 40px;
+}
+.junk-tr-3{
+    border-top-right-radius: 60px;
+}
+.junk-tr-4{
+    border-top-right-radius: 80px;
+}
+.junk-tr-5{
+    border-top-right-radius: 100px;
+}
+.junk-br-0{
+    border-bottom-right-radius: 0px;
+}
+.junk-br-1{
+    border-bottom-right-radius: 20px;
+}
+.junk-br-2{
+    border-bottom-right-radius: 40px;
+}
+.junk-br-3{
+    border-bottom-right-radius: 60px;
+}
+.junk-br-4{
+    border-bottom-right-radius: 80px;
+}
+.junk-br-5{
+    border-bottom-right-radius: 100px;
+}
+.junk-bl-0{
+    border-bottom-left-radius: 0px;
+}
+.junk-bl-1{
+    border-bottom-left-radius: 20px;
+}
+.junk-bl-2{
+    border-bottom-left-radius: 40px;
+}
+.junk-bl-3{
+    border-bottom-left-radius: 60px;
+}
+.junk-bl-4{
+    border-bottom-left-radius: 80px;
+}
+.junk-bl-5{
+    border-bottom-left-radius: 100px;
+}
+.junk-skew-1{
+    transform: skew(20deg, 10deg);
+}
+.junk-skew-1 p{
+    transform: skew(-20deg, -10deg);
+}
+/* message animation---------------------------------------------------------------------------------------- */
 .fade-in{
     animation: fadeIn 2s forwards;
 }
@@ -116,6 +205,7 @@ main{
         opacity: 1;
     }
 }
+/* background animation------------------------------------------------------------------------------------- */
 .point-0{
     top: -10px;
     left: -10px;
@@ -127,9 +217,23 @@ main{
     0% {
         top: -10px;
         left: -10px;
+        scale: 1;
     }
     100% {
         top: 0px;
         left: -300px;
+        scale: 1.5;
+    }
+}
+/* space junk animation------------------------------------------------------------------------------------ */
+.approaching{
+    animation: approach 3s forwards;
+}
+@keyframes approach {
+    0% {
+        scale: 0.25;
+    }
+    100% {
+        scale: 2;
     }
 }

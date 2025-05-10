@@ -14,7 +14,7 @@ const abelPics = [
 ]
 //All the text messages from the commander are in this array.
 const commanderTexts = [
-    'Your job is to pick up space junk. When you see some space junk, tap the right magnet to grab it.',
+    'Your job is to pick up space junk. When you see some space junk, tap the correct button to grab it.',
     'Space junk can break spaceships. It is important to keep Earth and space clean.',
     "You're doing great! Did you know that grown-ups who study space also do math?",
     "You did it! You grabbed all the space junk! Now you can take it to the recycling station. Then you can learn about space!"
@@ -27,6 +27,8 @@ const spaceFacts = [
 const message = document.getElementById('message');
 //This assigns the "space" webpage element to a variable.
 const space = document.getElementById('space');
+//This assigns the "junk" webpage element to a variable.
+const junk = document.getElementById('junk');
 //This assigns the number 0 to a variable. Later we're going to use this variable to count.
 let messageCounter = 0;
 //This assigns the number 0 to a variable. Later we are going to use this variable to count.
@@ -81,4 +83,8 @@ function blastOff(){
         directionCounter++;
         space.classList.add('point-' + directionCounter);
     }, 1000);
+    setTimeout(()=>{
+        junk.classList.remove('hidden');
+        junk.classList.add('approaching');
+    }, 4000);
 }
