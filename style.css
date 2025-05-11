@@ -187,11 +187,119 @@ main{
 .junk-bl-5{
     border-bottom-left-radius: 100px;
 }
+.junk-skew-0{
+    transform: skew(0deg, 0deg);
+}
 .junk-skew-1{
     transform: skew(20deg, 10deg);
 }
 .junk-skew-1 p{
     transform: skew(-20deg, -10deg);
+}
+.junk-skew-2{
+    transform: skew(10deg, 20deg);
+}
+.junk-skew-2 p{
+    transform: skew(-10deg, -20deg);
+}
+.junk-rotate-0{
+    transform: rotate(0deg);
+}
+.junk-rotate-1{
+    transform: rotate(20deg);
+}
+.junk-rotate-1 p{
+    transform: rotate(-20deg);
+}
+.junk-rotate-2{
+    transform: rotate(40deg);
+}
+.junk-rotate-2 p{
+    transform: rotate(-40deg);
+}
+.junk-rotate-3{
+    transform: rotate(60deg);
+}
+.junk-rotate-3 p{
+    transform: rotate(-60deg);
+}
+.junk-rotate-4{
+    transform: rotate(-20deg);
+}
+.junk-rotate-4 p{
+    transform: rotate(20deg);
+}
+.junk-rotate-5{
+    transform: rotate(-40deg);
+}
+.junk-rotate-5 p{
+    transform: rotate(40deg);
+}
+.junk-rotate-6{
+    transform: rotate(-60deg);
+}
+.junk-rotate-6 p{
+    transform: rotate(60deg);
+}
+.junk-background-1{
+    background-image: linear-gradient(to bottom right, #e8a5a5, #facdcd, #e8a5a5);
+}
+.junk-background-2{
+    background-image: linear-gradient(to bottom right, #e8c3a5, #fae2cf, #e8c3a5);
+}
+.junk-background-3{
+    background-image: linear-gradient(to bottom right, #e8e1a5, #f7f3cd, #e8e1a5);
+}
+.junk-background-4{
+    background-image: linear-gradient(to bottom right, #b1e8a5, #ccf0c5, #b1e8a5);
+}
+.junk-background-5{
+    background-image: linear-gradient(to bottom right, #a5e8cb, #bff5dd, #a5e8cb);
+}
+.junk-background-6{
+    background-image: linear-gradient(to bottom right, #a5d3e8, #c5e9fa, #a5d3e8);
+}
+.junk-background-7{
+    background-image: linear-gradient(to bottom right, #a8a5e8, #cdcafa, #a8a5e8);
+}
+.junk-background-8{
+    background-image: linear-gradient(to bottom right, #e8a5ce, #f2c0df, #e8a5ce);
+}
+.junk-background-9{
+    background-image: linear-gradient(to bottom right, #f2bdc8, #fad7de, #f2bdc8);
+}
+.junk-background-10{
+    background-image: linear-gradient(to bottom right, #d8d8d8, #f7f7f7, #d8d8d8)
+}
+.junk-background-11{
+    background-image: linear-gradient(to bottom right, #cca9a9, #e3c5c5, #cca9a9);
+}
+.junk-background-12{
+    background-image: linear-gradient(to bottom right, #d4bdab, #e6d5c8, #d4bdab);
+}
+.junk-background-13{
+    background-image: linear-gradient(to bottom right, #d9d5b8, #f2efda, #d9d5b8);
+}
+.junk-background-14{
+    background-image: linear-gradient(to bottom right, #bad6b4, #dcf0d8, #bad6b4);
+}
+.junk-background-15{
+    background-image: linear-gradient(to bottom right, #b2d6c6, #d3ede2, #b2d6c6);
+}
+.junk-background-16{
+    background-image: linear-gradient(to bottom right, #b6ced9, #d5e7f0, #b6ced9);
+}
+.junk-background-17{
+    background-image: linear-gradient(to bottom right, #b8b6d6, #d9d8f0, #b8b6d6);
+}
+.junk-background-18{
+    background-image: linear-gradient(to bottom right, #d4b2c7, #f2dae9, #d4b2c7);
+}
+.junk-background-19{
+    background-image: linear-gradient(to bottom right, #d4b4ba, #edd5da, #d4b4ba);
+}
+.junk-background-20{
+    background-image: linear-gradient(to bottom right, #dbd4c3, #f0eadd, #dbd4c3)
 }
 /* message animation---------------------------------------------------------------------------------------- */
 .fade-in{

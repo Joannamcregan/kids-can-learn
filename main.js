@@ -69,10 +69,11 @@ window.onload = ()=> {
         const button = document.createElement('button');
         const buttonText = document.createTextNode('okay');
         button.append(buttonText);
+        //When you click this button, a function called "blastOff" will get called.
         button.addEventListener('click', blastOff);
         message.append(button);
     }, 4000);
-};
+}
 
 function blastOff(){
     message.innerHTML = '';
@@ -84,7 +85,65 @@ function blastOff(){
         space.classList.add('point-' + directionCounter);
     }, 1000);
     setTimeout(()=>{
-        junk.classList.remove('hidden');
-        junk.classList.add('approaching');
+        makeJunk();
     }, 4000);
+}
+
+function makeJunk(){
+    //We're going to get a random number from 0 to 5 and assign it to a variable called "randomNumber";
+    let randomNumber = Math.floor(Math.random() * 6);
+    //We're going to use the number stored in the randomNumber variable to assign a CSS class to the space junk html element.
+    //This CSS class will change how rounded the top left corner of the space junk looks.
+    junk.classList.add('junk-tl-' + randomNumber);
+    //Now we're going to reassign a new random number from 0 to 5 to the "randomNumber" variable.
+    randomNumber = Math.floor(Math.random() * 6);
+    //We're going to use this number to assign another CSS class to the space junk element.
+    //This class will change how rounded the top right corner of the space junk looks.
+    junk.classList.add('junk-tr-' + randomNumber);
+    //Now we're going to reassign a new random number from 0 to 5 to the "randomNumber" variable.
+    randomNumber = Math.floor(Math.random() * 6);
+    //The next CSS class will change how rounded the junk element's bottom right corner will look.
+    junk.classList.add('junk-br-' + randomNumber);
+    //Now we're going to reassign a new random number from 0 to 5 to the "randomNumber" variable.
+    randomNumber = Math.floor(Math.random() * 6);
+    //The next CSS class will change how rounded the junk element's bottom right corner will look.
+    junk.classList.add('junk-br-' + randomNumber);
+    //Now we're going to reassign a new random number from 0 to 2 to the "randomNumber" variable.
+    randomNumber = Math.floor(Math.random() * 3);
+    //The next CSS class will determine how the junk element is skewed.
+    junk.classList.add('junk-skew-' + randomNumber);
+    //Now we're going to reassign a new random number from 0 to 6 to the "randomNumber" variable.
+    randomNumber = Math.floor(Math.random() * 7);
+    //The next CSS class will determine how the junk element is rotated.
+    junk.classList.add('junk-rotate-' + randomNumber);
+    //Now we're going to reassign a new random number from 1 to 20 to the "randomNumber" variable.
+    randomNumber = Math.floor(Math.random() * 20) + 1;
+    //The next CSS class will determine how the junk element's background looks.
+    junk.classList.add('junk-background-' + randomNumber);
+    //We're going to get a random number from 10 to 19 and assign it to a variable called "biggerNumber"
+    let biggerNumber = Math.floor(Math.random() * 10) + 10;
+    //We're also going to get a random number from 0 to 9 and assign it to a variable called "smallerNumber"
+    let smallerNumber = Math.floor(Math.random() * 10);
+    //And we're going to get a random number from 0 to 1 and assign it to a variable called "zeroOrOne"
+    let zeroOrOne = Math.floor(Math.random() * 2);
+    //we're going to declare a variable called "PlusOrMinus"
+    let plusOrMinus;
+    //if the number stored in the "zeroOrOne" variable is 1, we will assign a minus sign to the "plusOrMinus" variable
+    //Otherwise, we will assign a plus sign to the "plusOrMinus" variable.
+    if (zeroOrOne == 1){
+        plusOrMinus = "-"
+    } else {
+        plusOrMinus = "+"
+    }
+    //Now we're going to make a math equation from our variables! We will assign the equation to a variable called "equationString"
+    let equationString = biggerNumber + ' ' + plusOrMinus + ' ' + smallerNumber + ' =';
+    //We're going to put the equationString inside a paragraph HTML element that we will call "paragraph"
+    let paragraph = document.createElement('p');
+    paragraph.append(equationString);
+    //We're going to "append," or attach, the paragraph element to the junk element.
+    junk.append(paragraph);
+    //Now we're going to remove the CSS class that keeps the space junk hidden.
+    //We will add a class that gives in an animation that makes it look like it is approaching.
+    junk.classList.remove('hidden');
+    junk.classList.add('approaching');
 }
