@@ -110,8 +110,6 @@ function makeJunk(){
     junk.classList.add('junk-br-' + randomNumber);
     //Now we're going to reassign a new random number from 0 to 2 to the "randomNumber" variable.
     randomNumber = Math.floor(Math.random() * 3);
-    //The next CSS class will determine how the junk element is skewed.
-    junk.classList.add('junk-skew-' + randomNumber);
     //Now we're going to reassign a new random number from 0 to 6 to the "randomNumber" variable.
     randomNumber = Math.floor(Math.random() * 7);
     //The next CSS class will determine how the junk element is rotated.
