@@ -172,20 +172,15 @@ function makeJunk(){
     correctButton.innerText = correctAnswer;
     //We also need to get a wrong answer and assign it to one of the other buttons.
     indexNumber = Math.floor(Math.random() * buttonPlacements.length);
-    console.log('button placements length is ' + buttonPlacements.length);
-    console.log(buttonPlacements);
     let firstWrongButton = document.getElementById(buttonPlacements[indexNumber]);
     buttonPlacements.splice(indexNumber, 1);
-    console.log('index number is ' + indexNumber);
-    console.log(buttonPlacements[indexNumber]);
-    let firstWrongAnswer;
-    if (Math.floor(Math.random() * 2 == 0)){
-        firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 9) + correctAnswer + 1);
-    } else {
-        firstWrongAnswer = Math.floor(Math.random() * (correctAnswer - 1) + (correctAnswer - 6));
-    }
+    let firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 9) + correctAnswer + 1);
     firstWrongButton.innerText = firstWrongAnswer;
+    //Next, we will need to get another wrong answer and assign it to the remaining button
+    let secondWrongButton = document.getElementById(buttonPlacements[0]);
+    let secondWrongAnswer = Math.floor(Math.random() * (correctAnswer - 1) + (correctAnswer - 6));
+    secondWrongButton.innerText = secondWrongAnswer;
     correctButton.classList.remove('hidden');
     firstWrongButton.classList.remove('hidden');
-    //Next, we'll get another random number from 0 to 1 and use it to get the next button placement.
+    secondWrongButton.classList.remove('hidden');
 }
