@@ -153,14 +153,10 @@ function makeJunk(){
     //we do this because the buttonPlacements array has 3 items inside of it, and in JavaScrip we start counting indexes with 0.
     //An "index" is an items place in an array, like its spot in line
     let indexNumber = Math.floor(Math.random() * buttonPlacements.length);
-    console.log('button placements length is ' + buttonPlacements.length);
-    console.log(buttonPlacements);
     //Now that we have an indexNumber, we will get the item in the indexNumber's place in the array
     let correctButton = document.getElementById(buttonPlacements[indexNumber]);
     //We will remove this button placement from the array so we can't re-use it for a wrong answer.
     buttonPlacements.splice(indexNumber, 1);
-    console.log('index number is ' + indexNumber);
-    console.log(buttonPlacements[indexNumber]);
     //We will solve the equation and store the correct answer in a variable called "correctAnswer"
     let correctAnswer;
     if (plusOrMinus == '+'){
@@ -174,13 +170,28 @@ function makeJunk(){
     indexNumber = Math.floor(Math.random() * buttonPlacements.length);
     let firstWrongButton = document.getElementById(buttonPlacements[indexNumber]);
     buttonPlacements.splice(indexNumber, 1);
-    let firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 9) + correctAnswer + 1);
+    let firstWrongAnswer;
+    firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + (correctAnswer - 5);
+    if (firstWrongAnswer == correctAnswer){
+        firstWrongAnswer--;
+    }
     firstWrongButton.innerText = firstWrongAnswer;
     //Next, we will need to get another wrong answer and assign it to the remaining button
     let secondWrongButton = document.getElementById(buttonPlacements[0]);
-    let secondWrongAnswer = Math.floor(Math.random() * (correctAnswer - 1) + (correctAnswer - 6));
+    let secondWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + (correctAnswer - 5);
+    if ((secondWrongAnswer == correctAnswer) || (secondWrongAnswer == firstWrongAnswer)){
+        if ((correctAnswer == firstWrongAnswer + 1) || (correctAnswer == firstWrongAnswer - 1)){
+            secondWrongAnswer++;
+        } else {
+            secondWrongAnswer++;
+        }
+    }
     secondWrongButton.innerText = secondWrongAnswer;
-    correctButton.classList.remove('hidden');
-    firstWrongButton.classList.remove('hidden');
-    secondWrongButton.classList.remove('hidden');
+    //We will make the buttons appear after 3 seconds
+    setTimeout(()=>{
+        correctButton.classList.remove('hidden');
+        firstWrongButton.classList.remove('hidden');
+        secondWrongButton.classList.remove('hidden');
+    }, 3000);
 }
+
