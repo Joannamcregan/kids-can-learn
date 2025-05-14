@@ -243,121 +243,121 @@ main{
     background-image: linear-gradient(to bottom right, #e8a5a5, #fddcdc, #e8a5a5);
     border-bottom: solid 10px #d6a3a3;
     border-left: solid 5px #dda3a3;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-2{
     background-image: linear-gradient(to bottom right, #e8c3a5, #fff3e9, #e8c3a5);
     border-bottom: solid 10px #d4b8a3;
     border-left: solid 5px #e0bfa5;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-3{
     background-image: linear-gradient(to bottom right, #e8e1a5, #fffce2, #e8e1a5);
     border-bottom: 10px solid #d6d1a4;
     border-left: solid 5px #e2dca7;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-4{
     background-image: linear-gradient(to bottom right, #b1e8a5, #efffec, #b1e8a5);
     border-bottom: solid 10px #abd3a3;
     border-left: solid 5px #afdfa5;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-5{
     background-image: linear-gradient(to bottom right, #a5e8cb, #daffef, #a5e8cb);
     border-bottom: solid 10px #a1d0bc;
     border-left: solid 5px #a4dcc4;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-6{
     background-image: linear-gradient(to bottom right, #a5d3e8, #d6effb, #a5d3e8);
     border-bottom: solid 10px #a2c5d5;
     border-left: solid 5px #a5cde0;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-7{
     background-image: linear-gradient(to bottom right, #a8a5e8, #e4e2ff, #a8a5e8);
     border-bottom: solid 10px #a6a3d6;
     border-left: solid 5px #a9a6e1;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-8{
     background-image: linear-gradient(to bottom right, #e8a5ce, #ffd8f0, #e8a5ce);
     border-bottom: solid 10px #d5a1c1;
     border-left: solid 5px #e0a4c9;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-9{
     background-image: linear-gradient(to bottom right, #f2bdc8, #ffe5ea, #f2bdc8);
     border-bottom: solid 10px #e9bbc5;
     border-left: solid 5px #dcb3bc;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-10{
     background-image: linear-gradient(to bottom right, #d8d8d8, #fffcfc, #d8d8d8);
     border-bottom: solid 10px #c0c0c0;
     border-left: solid 5px #cdcdcd;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-11{
     background-image: linear-gradient(to bottom right, #cca9a9, #f6e6e6, #cca9a9);
     border-bottom: solid 10px rgb(186, 163, 163);
     border-left: solid 5px #c5a6a6;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-12{
     background-image: linear-gradient(to bottom right, #d4bdab, #fff5ee, #d4bdab);
     border-bottom: solid 10px #c2b2a6;
     border-left: solid 5px #cbb8a9;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-13{
     background-image: linear-gradient(to bottom right, #d9d5b8, #fffdee, #d9d5b8);
     border-bottom: solid 10px #c7c4b2;
     border-left: solid 5px #d2cfb8;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-14{
     background-image: linear-gradient(to bottom right, #bad6b4, #edffea, #bad6b4);
     border-bottom: solid 10px #afc0ab;
     border-left: solid 5px #b4cbaf;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-15{
     background-image: linear-gradient(to bottom right, #b2d6c6, #e7f8f1, #b2d6c6);
     border-bottom: solid 10px #acc4b9;
     border-left: solid 5px #aeccbf;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-16{
     background-image: linear-gradient(to bottom right, #b6ced9, #e7f3f9, #b6ced9);
     border-bottom: solid 10px #b2c1c8;
     border-left: solid 5px #b2c5ce;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-17{
     background-image: linear-gradient(to bottom right, #b8b6d6, #e8e7f8, #b8b6d6);
     border-bottom: solid 10px #b7b5ca;
     border-left: solid 5px #b8b6d1;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-18{
     background-image: linear-gradient(to bottom right, #d4b2c7, #fae8f3, #d4b2c7);
     border-bottom: solid 10px #c3afbb;
     border-left: solid 5px #cdb1c2;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-19{
     background-image: linear-gradient(to bottom right, #d4b4ba, #f7e5e8, #d4b4ba);
     border-bottom: solid 10px #c7b3b6;
     border-left: solid 5px #cdb4b8;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 .junk-background-20{
     background-image: linear-gradient(to bottom right, #dbd4c3, #fcf8ef, #dbd4c3);
     border-bottom: solid 10px #c9c5bb;
     border-left: solid 5px #d4cfc1;
-    box-shadow: -10px 10px 20px;
+    box-shadow: 5px -10px 20px;
 }
 /* message animation---------------------------------------------------------------------------------------- */
 .fade-in{

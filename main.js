@@ -30,6 +30,8 @@ const space = document.getElementById('space');
 //This assigns the "junk" webpage element to a variable.
 const junk = document.getElementById('junk');
 //This assigns the number 0 to a variable. Later we're going to use this variable to count.
+let correctAnswers = 0;
+//This assigns the number 0 to a variable. Later we're going to use this variable to count.
 let messageCounter = 0;
 //This assigns the number 0 to a variable. Later we are going to use this variable to count.
 let directionCounter = 0;
@@ -90,6 +92,8 @@ function blastOff(){
 }
 
 function makeJunk(){
+    //We're going to create an array of button placements and assign it to a variable called "buttonPlacements";
+    let buttonPlacements = ['left-button', 'middle-button', 'right-button'];
     //We're going to get a random number from 0 to 5 and assign it to a variable called "randomNumber";
     let randomNumber = Math.floor(Math.random() * 6);
     //We're going to use the number stored in the randomNumber variable to assign a CSS class to the space junk html element.
@@ -144,4 +148,44 @@ function makeJunk(){
     //We will add a class that gives in an animation that makes it look like it is approaching.
     junk.classList.remove('hidden');
     junk.classList.add('approaching');
+    //now we will randomly choose the left, middle, or right button to display the correct answer
+    //we will do this by getting a random number from 0 to 2.
+    //we do this because the buttonPlacements array has 3 items inside of it, and in JavaScrip we start counting indexes with 0.
+    //An "index" is an items place in an array, like its spot in line
+    let indexNumber = Math.floor(Math.random() * buttonPlacements.length);
+    console.log('button placements length is ' + buttonPlacements.length);
+    console.log(buttonPlacements);
+    //Now that we have an indexNumber, we will get the item in the indexNumber's place in the array
+    let correctButton = document.getElementById(buttonPlacements[indexNumber]);
+    //We will remove this button placement from the array so we can't re-use it for a wrong answer.
+    buttonPlacements.splice(indexNumber, 1);
+    console.log('index number is ' + indexNumber);
+    console.log(buttonPlacements[indexNumber]);
+    //We will solve the equation and store the correct answer in a variable called "correctAnswer"
+    let correctAnswer;
+    if (plusOrMinus == '+'){
+        correctAnswer = parseInt(biggerNumber) + parseInt(smallerNumber);
+    } else {
+        correctAnswer = parseInt(biggerNumber) - parseInt(smallerNumber);
+    }
+    //We will put the correctAnswer on the correctButton
+    correctButton.innerText = correctAnswer;
+    //We also need to get a wrong answer and assign it to one of the other buttons.
+    indexNumber = Math.floor(Math.random() * buttonPlacements.length);
+    console.log('button placements length is ' + buttonPlacements.length);
+    console.log(buttonPlacements);
+    let firstWrongButton = document.getElementById(buttonPlacements[indexNumber]);
+    buttonPlacements.splice(indexNumber, 1);
+    console.log('index number is ' + indexNumber);
+    console.log(buttonPlacements[indexNumber]);
+    let firstWrongAnswer;
+    if (Math.floor(Math.random() * 2 == 0)){
+        firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 9) + correctAnswer + 1);
+    } else {
+        firstWrongAnswer = Math.floor(Math.random() * (correctAnswer - 1) + (correctAnswer - 6));
+    }
+    firstWrongButton.innerText = firstWrongAnswer;
+    correctButton.classList.remove('hidden');
+    firstWrongButton.classList.remove('hidden');
+    //Next, we'll get another random number from 0 to 1 and use it to get the next button placement.
 }
