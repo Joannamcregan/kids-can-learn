@@ -25,6 +25,10 @@ const spaceFacts = [
 ]
 //This assigns the "message" webpage element to a variable, which is like giving it a nickname we can use in the JavaScript code.
 const message = document.getElementById('message');
+//This assigns the "goodJob" webpage element to a variable.
+const goodJob = document.getElementById('goodJob');
+//This assigns the "tryAgain" webpage element to a variable.
+const tryAgain = document.getElementById('tryAgain');
 //This assigns the "space" webpage element to a variable.
 const space = document.getElementById('space');
 //This assigns the "junk" webpage element to a variable.
@@ -43,7 +47,6 @@ let smallerNumber;
 let plusOrMinus;
 //This function tells the webpage what to do when it first loads
 window.onload = ()=> {
-    console.log('called on load');
     //This part of the function gets a random whole number between 0 and 3 and assigns it to a variable called randomNumber.
     const randomNumber = Math.floor(Math.random() * spaceViews.length);
     //Then we take the random number and look to see which picture is in that index in the array. An index is like a place in line.
@@ -89,7 +92,6 @@ function showMessage(){
 }
 
 function blastOff(){
-    console.log('called blastoff');
     message.innerHTML = '';
     message.classList.remove('opacity-10');
     message.classList.add('hidden');
@@ -189,17 +191,26 @@ function makeJunk(){
     let firstWrongButton = document.getElementById(buttonPlacements[indexNumber]);
     buttonPlacements.splice(indexNumber, 1);
     let firstWrongAnswer;
-    firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + (correctAnswer - 5);
+    if (correctAnswer > 5){
+        firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + (correctAnswer - 5);
+    } else {
+        firstWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + 1;
+    }    
     if (firstWrongAnswer == correctAnswer){
-        firstWrongAnswer--;
+        firstWrongAnswer++;
     }
     firstWrongButton.innerText = firstWrongAnswer;
     //Next, we will need to get another wrong answer and assign it to the remaining button
     let secondWrongButton = document.getElementById(buttonPlacements[0]);
-    let secondWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + (correctAnswer - 5);
+    if (correctAnswer > 5){
+        secondWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + (correctAnswer - 5);
+    } else {
+        secondWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + 1;
+    }   
     if ((secondWrongAnswer == correctAnswer) || (secondWrongAnswer == firstWrongAnswer)){
+        console.log('second wrong answer');
         if ((correctAnswer == firstWrongAnswer + 1) || (correctAnswer == firstWrongAnswer - 1)){
-            secondWrongAnswer++;
+            secondWrongAnswer = secondWrongAnswer + 2;
         } else {
             secondWrongAnswer++;
         }
@@ -216,15 +227,80 @@ function makeJunk(){
 function submitAnswer(e){
     if (plusOrMinus == '+'){
         if (e.target.innerText == biggerNumber + smallerNumber){
-            console.log('good job!')
+            clearJunk();
+            congratulate();
+            correctAnswers++;
+            if (correctAnswers % 4 == 0){
+                showMessage();
+            } else {
+                if (correctAnswers < 12){
+                    setTimeout(()=>{
+                        advanceSpaceship()
+                    }, 1000);
+                    setTimeout(()=>{
+                        makeJunk();
+                    }, 4000);
+                } else {
+                    setTimeout(()=>{
+                        console.log('you won!');
+                    }, 1000)
+                }
+            }
         } else {
-            console.log('try again')
+            //try again message
         }
     } else {
         if (e.target.innerText == biggerNumber - smallerNumber){
-            console.log('good job!')
+            congratulate();
+            correctAnswers++;
+            if (correctAnswers % 4 == 0){
+                showMessage();
+            } else {
+                if (correctAnswers < 12){
+                    setTimeout(()=>{
+                        advanceSpaceship()
+                    }, 1000);
+                    setTimeout(()=>{
+                        makeJunk();
+                    }, 4000);
+                } else {
+                    setTimeout(()=>{
+                        console.log('you won!');
+                    }, 1000)
+                }
+            }
         } else {
-            console.log('try again')
+            //try again message
         }
     }
+}
+
+function clearJunk(){
+
+}
+
+function congratulate(){
+    let answer;
+    let p = document.createElement('p');
+    if (plusOrMinus == "+"){
+        answer = biggerNumber + smallerNumber;
+        p.innerText = "That's right! " + biggerNumber + " + " + smallerNumber + " = " + answer + ".";
+    } else {
+        answer = biggerNumber - smallerNumber;
+        p.innerText = "That's right! " + biggerNumber + " - " + smallerNumber + " = " + answer + ".";
+    }
+    goodJob.append(p);
+    setTimeout(()=>{
+        goodJob.classList.add('opacity-10');
+        goodJob.classList.remove('hidden');
+    }, 2000);
+    setTimeout(()=>{
+        goodJob.classList.add('fade-in');
+        goodJob.classList.remove('opacity-10');
+    }, 2000);
+    setTimeout(()=>{
+        goodJob.innerHTML = '';
+        goodJob.classList.remove('opacity-10');
+        goodJob.classList.add('hidden');
+    }, 5000);
 }
