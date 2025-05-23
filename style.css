@@ -120,6 +120,44 @@ main{
     display: block;
     cursor: pointer;
 }
+#goodJob{
+    background: rgba(113, 251, 221, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding:  100px 20px;
+    overflow-y: scroll;
+}
+#goodJob p{
+    background: rgb(0, 67, 53);
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    margin: auto;
+    width: 250px;
+    margin-top: 20px;
+}
+#tryAgain{
+    background: rgba(251, 113, 131, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 100px 20px;
+    overflow-y: scroll;
+}
+#goodJob p{
+    background: rgb(66, 0, 9);
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    margin: auto;
+    width: 250px;
+    margin-top: 20px;
+}
 /* space junk styles------------------------------------------------------------------------------------------ */
 #junk{
     position: fixed;
@@ -240,9 +278,9 @@ main{
     transform: rotate(60deg);
 }
 .junk-background-1{
-    background-image: linear-gradient(to bottom right, #e8a5a5, #fddcdc, #e8a5a5);
-    border-bottom: solid 10px #d6a3a3;
-    border-left: solid 5px #dda3a3;
+    background-image: linear-gradient(to bottom right, #e8dda5, #fbf4d2, #e8dda5);
+    border-bottom: solid 10px #cfc79d;
+    border-left: solid 5px #ddd3a2;
     box-shadow: 5px -10px 20px;
 }
 .junk-background-2{
@@ -282,15 +320,15 @@ main{
     box-shadow: 5px -10px 20px;
 }
 .junk-background-8{
-    background-image: linear-gradient(to bottom right, #e8a5ce, #ffd8f0, #e8a5ce);
-    border-bottom: solid 10px #d5a1c1;
-    border-left: solid 5px #e0a4c9;
+    background-image: linear-gradient(to bottom right, #c3a5e8, #e2d0f9, #c3a5e8);
+    border-bottom: solid 10px #baa2d7;
+    border-left: solid 5px #bfa4df;
     box-shadow: 5px -10px 20px;
 }
 .junk-background-9{
-    background-image: linear-gradient(to bottom right, #f2bdc8, #ffe5ea, #f2bdc8);
-    border-bottom: solid 10px #e9bbc5;
-    border-left: solid 5px #dcb3bc;
+    background-image: linear-gradient(to bottom right, #bdeaf2, #e1f8fc, #bdeaf2);
+    border-bottom: solid 10px #bbe2e9;
+    border-left: solid 5px #b7d8dd;
     box-shadow: 5px -10px 20px;
 }
 .junk-background-10{
@@ -342,9 +380,9 @@ main{
     box-shadow: 5px -10px 20px;
 }
 .junk-background-18{
-    background-image: linear-gradient(to bottom right, #d4b2c7, #fae8f3, #d4b2c7);
-    border-bottom: solid 10px #c3afbb;
-    border-left: solid 5px #cdb1c2;
+    background-image: linear-gradient(to bottom right, #cfb2d4, #e8d7eb, #cfb2d4);
+    border-bottom: solid 10px #c1afc4;
+    border-left: solid 5px #cab2ce;
     box-shadow: 5px -10px 20px;
 }
 .junk-background-19{
@@ -401,5 +439,26 @@ main{
     }
     100% {
         scale: 2;
+    }
+}
+
+.capturing{
+    animation: capture 3s forwards;
+}
+@keyframes capture {
+    0% {
+        scale: 2;
+        transform: rotate(0deg);
+        padding-top: 0px;
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        scale: 3;
+        transform: rotate(720deg);
+        padding-top: 2000px;
+        opacity: 0;
     }
 }

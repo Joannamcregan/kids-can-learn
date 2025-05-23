@@ -230,44 +230,37 @@ function submitAnswer(e){
             clearJunk();
             congratulate();
             correctAnswers++;
-            if (correctAnswers % 4 == 0){
-                showMessage();
+            if (correctAnswers < 12){
+                setTimeout(()=>{
+                    advanceSpaceship()
+                }, 1000);
+                setTimeout(()=>{
+                    makeJunk();
+                }, 9000);
             } else {
-                if (correctAnswers < 12){
-                    setTimeout(()=>{
-                        advanceSpaceship()
-                    }, 1000);
-                    setTimeout(()=>{
-                        makeJunk();
-                    }, 4000);
-                } else {
-                    setTimeout(()=>{
-                        console.log('you won!');
-                    }, 1000)
-                }
+                setTimeout(()=>{
+                    console.log('you won!');
+                }, 1000)
             }
         } else {
             //try again message
         }
     } else {
         if (e.target.innerText == biggerNumber - smallerNumber){
+            clearJunk();
             congratulate();
             correctAnswers++;
-            if (correctAnswers % 4 == 0){
-                showMessage();
+            if (correctAnswers < 12){
+                setTimeout(()=>{
+                    advanceSpaceship()
+                }, 1000);
+                setTimeout(()=>{
+                    makeJunk();
+                }, 9000);
             } else {
-                if (correctAnswers < 12){
-                    setTimeout(()=>{
-                        advanceSpaceship()
-                    }, 1000);
-                    setTimeout(()=>{
-                        makeJunk();
-                    }, 4000);
-                } else {
-                    setTimeout(()=>{
-                        console.log('you won!');
-                    }, 1000)
-                }
+                setTimeout(()=>{
+                    console.log('you won!');
+                }, 1000)
             }
         } else {
             //try again message
@@ -276,7 +269,12 @@ function submitAnswer(e){
 }
 
 function clearJunk(){
-
+    console.log('clearing');
+    junk.classList.add('capturing');
+    setTimeout(()=>{
+        junk.classList = 'hidden';
+        junk.innerHTML = '';
+    }, 3000);
 }
 
 function congratulate(){
