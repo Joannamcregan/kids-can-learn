@@ -163,7 +163,6 @@ main{
     position: fixed;
     top: 50%;
     left: 30%;
-    scale: 1.5;
     padding: 10px 50px;
 }
 .junk-tl-0{
@@ -438,7 +437,7 @@ main{
         scale: 0.25;
     }
     100% {
-        scale: 2;
+        scale: 1;
     }
 }
 
@@ -448,15 +447,35 @@ main{
 @keyframes capture {
     0% {
         transform: rotate(0deg);
-        margin-top: 0px;
+        scale: 1;
         opacity: 1;
     }
-    90% {
+    70% {
         opacity: 1;
-        transform: rotate(720deg);
+        margin-top: 0px;
     }
     100% {
         margin-top: 2000px;
         opacity: 0;
+        scale: 1.5;
+        transform: rotate(720deg);
+    }
+}
+
+.failing{
+    animation: fail 1s forwards;
+}
+@keyframes fail {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
