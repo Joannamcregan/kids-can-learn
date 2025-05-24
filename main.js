@@ -16,8 +16,7 @@ const abelPics = [
 const commanderTexts = [
     'Your job is to pick up space junk. When you see some space junk, tap the correct button to grab it.',
     'Space junk can break spaceships. It is important to keep Earth and space clean.',
-    "You're doing great! Did you know that grown-ups who study space also do math?",
-    "You did it! You grabbed all the space junk! Now you can take it to the recycling station. Then you can learn about space!"
+    "You're doing great! Did you know that grown-ups who study space also do math?"
 ]
 //All the facts about space are in this array.
 const spaceFacts = [
@@ -29,6 +28,8 @@ const message = document.getElementById('message');
 const goodJob = document.getElementById('goodJob');
 //This assigns the "tryAgain" webpage element to a variable.
 const tryAgain = document.getElementById('tryAgain');
+//This assigns the "youWon" webpage element to a variable.
+const youWon = document.getElementById('youWon');
 //This assigns the "space" webpage element to a variable.
 const space = document.getElementById('space');
 //This assigns the "junk" webpage element to a variable.
@@ -85,7 +86,7 @@ function showMessage(){
     //It adds a button after 4 seconds.
     setTimeout(()=>{
         const button = document.createElement('button');
-        const buttonText = document.createTextNode('okay');
+        const buttonText = document.createTextNode("let's go!");
         button.append(buttonText);
         //When you click this button, a function called "blastOff" will get called.
         button.addEventListener('click', blastOff);
@@ -212,7 +213,6 @@ function makeJunk(){
         secondWrongAnswer = Math.floor(Math.random() * (correctAnswer + 5)) + 1;
     }   
     if ((secondWrongAnswer == correctAnswer) || (secondWrongAnswer == firstWrongAnswer)){
-        console.log('second wrong answer');
         if ((correctAnswer == firstWrongAnswer + 1) || (correctAnswer == firstWrongAnswer - 1)){
             secondWrongAnswer = secondWrongAnswer + 2;
         } else {
@@ -264,7 +264,7 @@ function markAnswerCorrect(){
         }
     } else {
         setTimeout(()=>{
-            console.log('you won!');
+            declareVictory();
         }, 8000)
     }
 }
@@ -292,6 +292,35 @@ function clearJunk(){
     setTimeout(()=>{
         junk.classList = 'hidden';
         junk.innerHTML = '';
+    }, 3000);
+}
+
+function declareVictory(){
+    console.log('victory declared');
+    let pic = document.createElement('IMG');
+    pic.src = abelPics[messageCounter]['path'];
+    pic.alt = abelPics[messageCounter]['alt'];
+    youWon.append(pic);
+    setTimeout(()=>{
+        youWon.classList.add('opacity-10');
+        youWon.classList.remove('hidden');
+    }, 2000);
+    setTimeout(()=>{
+        youWon.classList.add('fade-in');
+        youWon.classList.remove('opacity-10');
+    }, 2000);
+    setTimeout(()=>{
+        let p = document.createElement('p');
+        p.innerText = 'You did it! You got all the space junk!';
+        youWon.append(p);
+    }, 2500);    
+    setTimeout(()=>{
+        const button = document.createElement('button');
+        const buttonText = document.createTextNode('Play again?');
+        button.append(buttonText);
+        //When you click this button, a function called "blastOff" will get called.
+        button.addEventListener('click', playAgain);
+        youWon.append(button);
     }, 3000);
 }
 
@@ -353,4 +382,8 @@ function revealButtons(){
     Array.prototype.forEach.call(buttons, function(button) {
         button.classList.remove('hidden');
     });
+}
+
+function playAgain(){
+    location.reload();
 }

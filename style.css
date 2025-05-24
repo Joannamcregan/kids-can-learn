@@ -93,8 +93,9 @@ main{
     width: 100%;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
-    padding: 20px;
+    padding-top: 20px;
     overflow-y: scroll;
 }
 #message img{
@@ -112,12 +113,12 @@ main{
     border-radius: 20px;
     color: white;
     margin: auto;
-    width: 250px;
+    width: 220px;
     margin-top: 20px;
 }
 #message button{
     border-radius: 50%;
-    width: 80px;
+    width: fit-content;
     padding: 20px;
     background-image: linear-gradient(to bottom right, rgb(104, 124, 252) 30%, rgb(139, 154, 249) 50%, rgb(104, 124, 252) 70%);
     color: black;
@@ -126,6 +127,48 @@ main{
     margin: 20px auto;
     display: block;
     cursor: pointer;
+    text-align: center;
+}
+#youWon{
+    background: rgba(251, 113, 230, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding-top:  20px;
+    overflow-y: scroll;
+}
+#youWon img{
+    display: block;
+    border-radius: 50%;
+    border: solid rgb(103, 15, 90) 5px;
+    opacity: 0.8;
+    width: 150px;
+    height: auto;
+    margin: auto;
+}
+#youWon p{
+    background: rgb(84, 0, 71);
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    margin: 20px auto 10px auto;
+    width: 220px;
+    text-align: center;
+}
+#youWon button{
+    border-radius: 50%;
+    width: fit-content;
+    padding: 20px;
+    background-image: linear-gradient(to bottom right, rgb(207, 131, 195) 30%, rgb(226, 167, 217) 50%, rgb(207, 131, 195) 70%);
+    color: black;
+    font-size: 16px;
+    text-shadow: 1px 1px 1px rgb(207, 131, 195), -1px -1px 1px rgb(207, 131, 195);
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+    text-align: center;
 }
 #goodJob{
     background: rgba(113, 251, 221, 0.5);
@@ -134,7 +177,7 @@ main{
     position: fixed;
     top: 0;
     z-index: 1000;
-    padding:  100px 20px;
+    padding-top:  100px;
     overflow-y: scroll;
 }
 #goodJob p{
@@ -142,9 +185,8 @@ main{
     padding: 20px;
     border-radius: 20px;
     color: white;
-    margin: auto;
-    width: 250px;
-    margin-top: 20px;
+    margin: 20px auto 10px auto;
+    width: 220px;
     text-align: center;
 }
 #tryAgain{
@@ -154,7 +196,7 @@ main{
     position: fixed;
     top: 0;
     z-index: 1000;
-    padding: 100px 20px;
+    padding-top: 100px;
     overflow-y: scroll;
 }
 #tryAgain p{
@@ -162,9 +204,8 @@ main{
     padding: 20px;
     border-radius: 20px;
     color: white;
-    margin: auto;
-    width: 250px;
-    margin-top: 20px;
+    margin: 20px auto 10px auto;
+    width: 220px;
     text-align: center;
 }
 /* space junk styles------------------------------------------------------------------------------------------ */
@@ -567,9 +608,54 @@ main{
         scale: 1.5;
     }
     100% {
-        top: 100px;
+        top: -100px;
         left: -600px;
         scale: 2.5;
+    }
+}
+.point-11{
+    animation: point11 3s forwards;
+}
+@keyframes point11 {
+    0% {
+        top: -100px;
+        left: -600px;
+        scale: 2.5;
+    }
+    100% {
+        top: -400px;
+        left: -400px;
+        scale: 2;
+    }
+}
+.point-12{
+    animation: point12 3s forwards;
+}
+@keyframes point12 {
+    0% {
+        top: -400px;
+        left: -400px;
+        scale: 2;
+    }
+    100% {
+        top: -200px;
+        left: -100px;
+        scale: 1.5;
+    }
+}
+.point-13{
+    animation: point13 3s forwards;
+}
+@keyframes point13 {
+    0% {
+        top: -200px;
+        left: -100px;
+        scale: 1.5;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        scale: 1;
     }
 }
 /* space junk animation------------------------------------------------------------------------------------ */
