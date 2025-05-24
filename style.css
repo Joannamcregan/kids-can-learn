@@ -145,6 +145,7 @@ main{
     margin: auto;
     width: 250px;
     margin-top: 20px;
+    text-align: center;
 }
 #tryAgain{
     background: rgba(251, 113, 131, 0.5);
@@ -164,6 +165,7 @@ main{
     margin: auto;
     width: 250px;
     margin-top: 20px;
+    text-align: center;
 }
 /* space junk styles------------------------------------------------------------------------------------------ */
 #junk{
@@ -492,7 +494,82 @@ main{
     100% {
         top: 0px;
         left: 0px;
+        scale: 2;
+    }
+}
+.point-6{
+    animation: point6 3s forwards;
+}
+@keyframes point6 {
+    0% {
+        top: 0px;
+        left: 0px;
+        scale: 2;
+    }
+    100% {
+        top: -100px;
+        left: -150px;
+        scale: 3;
+    }
+}
+.point-7{
+    animation: point7 3s forwards;
+}
+@keyframes point7 {
+    0% {
+        top: -100px;
+        left: -150px;
+        scale: 3;
+    }
+    100% {
+        top: -100px;
+        left: -300px;
+        scale: 2;
+    }
+}
+.point-8{
+    animation: point8 3s forwards;
+}
+@keyframes point8 {
+    0% {
+        top: -100px;
+        left: -300px;
+        scale: 2;
+    }
+    100% {
+        top: -200px;
+        left: -500px;
+        scale: 3;
+    }
+}
+.point-9{
+    animation: point9 3s forwards;
+}
+@keyframes point9 {
+    0% {
+        top: -200px;
+        left: -500px;
+        scale: 3;
+    }
+    100% {
+        top: 0px;
+        left: -400px;
         scale: 1.5;
+    }
+}
+.point-10{
+    animation: point10 3s forwards;
+}
+@keyframes point10 {
+    0% {
+        top: 0px;
+        left: -400px;
+        scale: 1.5;
+    }
+    100% {
+        top: 100px;
+        left: -600px;
+        scale: 2.5;
     }
 }
 /* space junk animation------------------------------------------------------------------------------------ */
