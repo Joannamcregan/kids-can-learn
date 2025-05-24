@@ -233,13 +233,13 @@ function submitAnswer(e){
         if (e.target.innerText == biggerNumber + smallerNumber){
             markAnswerCorrect();
         } else {
-            //try again message
+            markAnswerIncorrect();
         }
     } else {
         if (e.target.innerText == biggerNumber - smallerNumber){
             markAnswerCorrect();
         } else {
-            //try again message
+            markAnswerIncorrect();
         }
     }
 }
@@ -263,7 +263,20 @@ function markAnswerCorrect(){
 }
 
 function markAnswerIncorrect(){
+    fail();
+    setTimeout(()=>{
+        sayTryAgain();
+    }, 3000);
+}
 
+function fail(){
+    junk.classList.remove('junk-rotate-' + rotationNumber);
+    junk.classList.remove('approaching')
+    junk.classList.add('failing');
+    setTimeout(()=>{
+        junk.classList.remove('failing');
+        junk.classList.add('junk-rotate-' + rotationNumber);
+    }, 3000);
 }
 
 function clearJunk(){
@@ -298,5 +311,24 @@ function congratulate(){
         goodJob.innerHTML = '';
         goodJob.classList.remove('opacity-10');
         goodJob.classList.add('hidden');
+    }, 7000);
+}
+
+function sayTryAgain(){
+    let p = document.createElement('p');
+    p.innerText = 'Try again!';
+    tryAgain.append(p);
+    setTimeout(()=>{
+        tryAgain.classList.add('opacity-10');
+        tryAgain.classList.remove('hidden');
+    }, 2000);
+    setTimeout(()=>{
+        tryAgain.classList.add('fade-in');
+        tryAgain.classList.remove('opacity-10');
+    }, 2000);
+    setTimeout(()=>{
+        tryAgain.innerHTML = '';
+        tryAgain.classList.remove('opacity-10');
+        tryAgain.classList.add('hidden');
     }, 7000);
 }

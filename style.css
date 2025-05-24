@@ -149,7 +149,7 @@ main{
     padding: 100px 20px;
     overflow-y: scroll;
 }
-#goodJob p{
+#tryAgain p{
     background: rgb(66, 0, 9);
     padding: 20px;
     border-radius: 20px;
@@ -443,6 +443,21 @@ main{
         scale: 1;
     }
 }
+.point-3{
+    animation: point3 3s forwards;
+}
+@keyframes point3 {
+    0% {
+        top: -300px;
+        left: -200px;
+        scale: 1;
+    }
+    100% {
+        top: -500px;
+        left: -300px;
+        scale: 1.5;
+    }
+}
 /* space junk animation------------------------------------------------------------------------------------ */
 .approaching{
     animation: approach 3s forwards;
@@ -478,7 +493,7 @@ main{
 }
 
 .failing{
-    animation: fail 1s forwards;
+    animation: fail 1s 3;
 }
 @keyframes fail {
     0% {
@@ -487,7 +502,7 @@ main{
     25% {
         transform: rotate(-30deg);
     }
-    75% {
+    90% {
         transform: rotate(30deg);
     }
     100% {
