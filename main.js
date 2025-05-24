@@ -250,12 +250,18 @@ function markAnswerCorrect(){
     congratulate();
     correctAnswers++;
     if (correctAnswers < 12){
-        setTimeout(()=>{
-            advanceSpaceship()
-        }, 8000);
-        setTimeout(()=>{
-            makeJunk();
-        }, 11000);
+        if (directionCounter % 4 == 0){
+            setTimeout(()=>{
+                showMessage();
+            }, 8000);
+        } else {
+            setTimeout(()=>{
+                advanceSpaceship()
+            }, 8000);
+            setTimeout(()=>{
+                makeJunk();
+            }, 11000);
+        }
     } else {
         setTimeout(()=>{
             console.log('you won!');
