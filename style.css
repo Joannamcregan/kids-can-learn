@@ -447,18 +447,16 @@ main{
 }
 @keyframes capture {
     0% {
-        scale: 2;
         transform: rotate(0deg);
-        padding-top: 0px;
+        margin-top: 0px;
         opacity: 1;
     }
     90% {
         opacity: 1;
+        transform: rotate(720deg);
     }
     100% {
-        scale: 3;
-        transform: rotate(720deg);
-        padding-top: 2000px;
+        margin-top: 2000px;
         opacity: 0;
     }
 }

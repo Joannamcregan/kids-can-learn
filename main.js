@@ -269,11 +269,10 @@ function submitAnswer(e){
 }
 
 function clearJunk(){
-    console.log('clearing');
+    junk.innerHTML = '';
     junk.classList.add('capturing');
     setTimeout(()=>{
         junk.classList = 'hidden';
-        junk.innerHTML = '';
     }, 3000);
 }
 
