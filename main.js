@@ -229,6 +229,7 @@ function makeJunk(){
 }
 
 function submitAnswer(e){
+    hideButtons();
     if (plusOrMinus == '+'){
         if (e.target.innerText == biggerNumber + smallerNumber){
             markAnswerCorrect();
@@ -330,5 +331,20 @@ function sayTryAgain(){
         tryAgain.innerHTML = '';
         tryAgain.classList.remove('opacity-10');
         tryAgain.classList.add('hidden');
+        revealButtons();
     }, 7000);
+}
+
+function hideButtons(){
+    const buttons = document.getElementsByClassName('control-button');
+    Array.prototype.forEach.call(buttons, function(button) {
+        button.classList.add('hidden');
+    });
+}
+
+function revealButtons(){
+    const buttons = document.getElementsByClassName('control-button');
+    Array.prototype.forEach.call(buttons, function(button) {
+        button.classList.remove('hidden');
+    });
 }
