@@ -43,8 +43,10 @@ let directionCounter = 0;
 let biggerNumber;
 //We will use this variable to store another number for an equation.
 let smallerNumber;
-//we're going to declare a variable called "PlusOrMinus" that will be used to keep track of whether our equation is using plus or minus.
+//we're going to declare a variable called "plusOrMinus" that will be used to keep track of whether our equation is using plus or minus.
 let plusOrMinus;
+//We're going to declare a variable called "rotationNumber" that will be used to keep track of how much our piece of space junk is rotated.
+let rotationNumber;
 //This function tells the webpage what to do when it first loads
 window.onload = ()=> {
     //This part of the function gets a random whole number between 0 and 3 and assigns it to a variable called randomNumber.
@@ -140,6 +142,8 @@ function makeJunk(){
     randomNumber = Math.floor(Math.random() * 7);
     //The next CSS class will determine how the junk element is rotated.
     junk.classList.add('junk-rotate-' + randomNumber);
+    //We're also going to store this rotation number in a variable so we can use it later.
+    rotationNumber = randomNumber;
     //Now we're going to reassign a new random number from 1 to 20 to the "randomNumber" variable.
     randomNumber = Math.floor(Math.random() * 20) + 1;
     //The next CSS class will determine how the junk element's background looks.
@@ -227,49 +231,43 @@ function makeJunk(){
 function submitAnswer(e){
     if (plusOrMinus == '+'){
         if (e.target.innerText == biggerNumber + smallerNumber){
-            clearJunk();
-            congratulate();
-            correctAnswers++;
-            if (correctAnswers < 12){
-                setTimeout(()=>{
-                    advanceSpaceship()
-                }, 1000);
-                setTimeout(()=>{
-                    makeJunk();
-                }, 9000);
-            } else {
-                setTimeout(()=>{
-                    console.log('you won!');
-                }, 1000)
-            }
+            markAnswerCorrect();
         } else {
             //try again message
         }
     } else {
         if (e.target.innerText == biggerNumber - smallerNumber){
-            clearJunk();
-            congratulate();
-            correctAnswers++;
-            if (correctAnswers < 12){
-                setTimeout(()=>{
-                    advanceSpaceship()
-                }, 1000);
-                setTimeout(()=>{
-                    makeJunk();
-                }, 9000);
-            } else {
-                setTimeout(()=>{
-                    console.log('you won!');
-                }, 1000)
-            }
+            markAnswerCorrect();
         } else {
             //try again message
         }
     }
 }
 
+function markAnswerCorrect(){
+    clearJunk();
+    congratulate();
+    correctAnswers++;
+    if (correctAnswers < 12){
+        setTimeout(()=>{
+            advanceSpaceship()
+        }, 8000);
+        setTimeout(()=>{
+            makeJunk();
+        }, 11000);
+    } else {
+        setTimeout(()=>{
+            console.log('you won!');
+        }, 8000)
+    }
+}
+
+function markAnswerIncorrect(){
+
+}
+
 function clearJunk(){
-    junk.classList.remove('junk-rotate-0', 'junk-rotate-1', 'junk-rotate-2', 'junk-rotate-3', 'junk-rotate-4', 'junk-rotate-5', 'junk-rotate-6')
+    junk.classList.remove('junk-rotate-' + rotationNumber);
     junk.classList.add('capturing');
     setTimeout(()=>{
         junk.classList = 'hidden';
@@ -300,5 +298,5 @@ function congratulate(){
         goodJob.innerHTML = '';
         goodJob.classList.remove('opacity-10');
         goodJob.classList.add('hidden');
-    }, 5000);
+    }, 7000);
 }

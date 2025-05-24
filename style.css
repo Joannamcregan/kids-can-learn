@@ -428,6 +428,21 @@ main{
         scale: 1.5;
     }
 }
+.point-2{
+    animation: point2 3s forwards;
+}
+@keyframes point2 {
+    0% {
+        top: 0px;
+        left: -300px;
+        scale: 1.5;
+    }
+    100% {
+        top: -300px;
+        left: -200px;
+        scale: 1;
+    }
+}
 /* space junk animation------------------------------------------------------------------------------------ */
 .approaching{
     animation: approach 3s forwards;
